@@ -1168,3 +1168,54 @@ npm will default some values based on package contents.
 * [npm install](/commands/npm-install)
 * [npm publish](/commands/npm-publish)
 * [npm uninstall](/commands/npm-uninstall)
+cli/docs/content/configuring-npm/package-json.md{
+  "name": "workspace-example",
+  "workspaces": [
+    "./packages/*"
+  ]
+}{
+  "os": [
+    "darwin",
+    "linux"
+  ]
+}{
+  "engines": {
+    "node": ">=0.10.3 <15"
+  }
+}{
+  "engines": {
+    "npm": "~1.0.20"
+  }
+}{
+  "overrides": {
+    "bar@2.0.0": {
+      "foo": "1.0.0"
+    }
+  }
+}try {
+  var foo = require('foo')
+  var fooVersion = require('foo/package.json').version
+} catch (er) {
+  foo = null
+}
+if ( notGoodFooVersion(fooVersion) ) {
+  foo = null
+}
+
+// .. then later in your program ..
+
+if (foo) {
+  foo.doFooThings(){
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/react-dom"
+  }
+}{
+  "author": "Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
+}{
+  "license": "UNLICENSED"
+}{
+  "license": "(MIT OR Apache-2.0)"
+}
+}
